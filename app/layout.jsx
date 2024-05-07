@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+import AuthProvider from "@/components/AuthProvider";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
@@ -15,19 +16,21 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en">
-            <body className={inter.className}>
-                {/* Navigation Bar */}
-                <NavBar />
+        <AuthProvider>
+            <html lang="en">
+                <body className={inter.className}>
+                    {/* Navigation Bar */}
+                    <NavBar />
 
-                {/* Main content */}
-                <main>
-                    {children}
-                </main>
+                    {/* Main content */}
+                    <main>
+                        {children}
+                    </main>
 
-                {/* Footer */}
-                <Footer />
-            </body>
-        </html>
+                    {/* Footer */}
+                    <Footer />
+                </body>
+            </html>
+        </AuthProvider>
     );
 };
