@@ -9,6 +9,7 @@ import { fetchProperty } from '@/utils/requests';
 
 import PropertyHeaderImage from '@/components/PropertyHeaderImage';
 import PropertyDetails from '@/components/PropertyDetails';
+import PropertyImages from '@/components/PropertyImages';
 import Spinner from '@/components/Spinner';
 
 const PropertyPage = () => {
@@ -163,6 +164,9 @@ const PropertyPage = () => {
                             </div>
                         </div>
                     </section>
+
+                    {/* Images */}
+                    <PropertyImages images={property.images} />
                 </>
             )}
         </>
