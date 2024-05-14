@@ -1,3 +1,5 @@
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -29,6 +31,9 @@ export default function RootLayout({ children }) {
 
                     {/* Footer */}
                     <Footer />
+
+                    {/* Toaster */}
+                    <ToastContainer />
                 </body>
             </html>
         </AuthProvider>
