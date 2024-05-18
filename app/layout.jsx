@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import AuthProvider from "@/components/AuthProvider";
+import { GlobalProvider } from "@/context/GlobalContext";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
@@ -18,24 +19,26 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <AuthProvider>
-            <html lang="en">
-                <body className={inter.className}>
-                    {/* Navigation Bar */}
-                    <NavBar />
+        <GlobalProvider>
+            <AuthProvider>
+                <html lang="en">
+                    <body className={inter.className}>
+                        {/* Navigation Bar */}
+                        <NavBar />
 
-                    {/* Main content */}
-                    <main>
-                        {children}
-                    </main>
+                        {/* Main content */}
+                        <main>
+                            {children}
+                        </main>
 
-                    {/* Footer */}
-                    <Footer />
+                        {/* Footer */}
+                        <Footer />
 
-                    {/* Toaster */}
-                    <ToastContainer />
-                </body>
-            </html>
-        </AuthProvider>
+                        {/* Toaster */}
+                        <ToastContainer />
+                    </body>
+                </html>
+            </AuthProvider>
+        </GlobalProvider>
     );
 };
