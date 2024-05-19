@@ -6,9 +6,9 @@ import { fetchProperties } from '@/utils/requests';
 
 async function HomeProperties() {
     // Randomizing the order of the properties and getting 3 of them
-    const properties = await fetchProperties();
+    const data = await fetchProperties();
 
-    const recentProperties = properties
+    const recentProperties = data.properties
         .sort(() => Math.random() - Math.random())
         .slice(0, 3);
 
