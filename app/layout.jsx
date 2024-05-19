@@ -1,10 +1,12 @@
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
 import { Inter } from "next/font/google";
+import 'react-toastify/dist/ReactToastify.css';
 import "./globals.css";
+import 'photoswipe/dist/photoswipe.css';
 
 import AuthProvider from "@/components/AuthProvider";
 import { GlobalProvider } from "@/context/GlobalContext";
+
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
